@@ -6,6 +6,7 @@ var losses = 0;
 var guessesLeft = 3;
 var guessedLetter = '';
 let loss = 8;
+var letterGuessed = [];
 
 //here i randomize letter to be guessed
 function randomizeLetter() {
@@ -25,6 +26,7 @@ document.onkeyup = function (event) {
     userGuess === "h" || userGuess === "i" || userGuess === "j" || userGuess === "k" || userGuess === "l" || userGuess === "m" || userGuess === "n" || userGuess === "o" || 
     userGuess === "p" || userGuess === "q" || userGuess === "r" || userGuess === "s" || userGuess === "t" || userGuess === "u" || userGuess === "v" || userGuess === "w" ||
     userGuess === "x" || userGuess === "y" || userGuess === "z" ){
+        letterGuessed.push(userGuess);
         return;
     } else {
         alert("press a letter")
@@ -34,8 +36,10 @@ document.onkeyup = function (event) {
 //here it adds the wins and randomizes a new letter
     if (userGuess === guessedLetter) {
         wins++;
+        clear();
         alert("You win!!!!")
       randomizeLetter();
+      victory();
        }
     else {
      guessesLeft--;
@@ -61,10 +65,23 @@ document.onkeyup = function (event) {
     };
     warning();
     check();
-    document.getElementById("Wins").innerHTML = "Wins =" + " " +  wins;
-    document.getElementById("Losses").innerHTML = "Losses =" + " " +  losses;
-    document.getElementById("GuessesLeft").innerHTML = "GuessesLeft =" + " " +  guessesLeft;
+    document.getElementById("LettersGuessed").innerHTML = "Letters Guessed = " + " " + letterGuessed;
+    document.getElementById("winScore").innerHTML = " " +  wins;
+    document.getElementById("lostScore").innerHTML = " " +  losses;
+    document.getElementById("guessesRemaining").innerHTML = " " +  guessesLeft;
 };
  
-
+function clear() {
+    letterGuessed = [];
+}
+function victory() {
+    if (wins === 3) {
+        console.log("win")
+        var img = document.createElement("img");
+        img.src = "./assets/image/victory.gif";
+        document.getElementById("description").remove();
+        document.getElementById("victorySuprise").appendChild(img);
+       setTimeout(function() { window.location.reload()}, 8000);
+    }
+}
 randomizeLetter();

@@ -1,0 +1,41 @@
+body {
+    background-color: rgb(48, 233, 247); 
+    margin: 0;
+}
+#title {
+    font-family: 'Mystery Quest', cursive; 
+    width: fit-content;  
+    color: blue;
+}
+#guess {
+    color: blue;
+}
+.description {
+    color: blueviolet;
+    font-size: 2em;
+}
+#container {
+    height: 75vh;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    align-items: center;
+}
+#LettersGuessed  {
+    color: blue;   
+    font-size: 2em;
+}
+.scores {
+    font-size: 3em;
+    color:  blue;
+    font-family: 'Mystery Quest', cursive; 
+}
+#winScore {
+    color: green;
+}
+#lostScore {
+    color: red;
+}
+#guessesRemaining {
+    color:  blueviolet;
+}

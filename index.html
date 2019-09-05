@@ -6,15 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>PsychicGame</title>
+    <link href="https://fonts.googleapis.com/css?family=Mystery+Quest&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
 </head>
 
 <body>
-    
-        <h1>The Psychic Game</h1>
-        <p>Guess what letter I'm thinking of?</p>
-        <div id="Wins">Wins</div>
-        <div id="Losses">Losses</div>
-        <div id="GuessesLeft">GuessesLeft</div>
+    <div id="container">
+        <h1 id="title">The Psychic Game</h1>
+        <div id="victorySuprise"></div>
+        <div id="description">
+            <p class="description">Try guessing the lowercased <strong>"Letter"</strong> selected at random to gain
+                points.
+                <br />
+                If 10 losses reached the game will reset!
+                <br />
+                <p class="description">Reach 3 wins to win the game!</p>
+            </p> <br />
+            <p id="guess"><strong>Guess what letter I'm thinking of?</strong></p>
+            <div id="LettersGuessed">Letters Guessed </div>
+        </div>
+
+        <div class="scores">
+            <div id="Wins">Wins = <span id="winScore">0</span></div>
+            <div id="Losses">Losses = <span id="lostScore">0</span></div>
+            <div id="GuessesLeft">GuessesLeft = <span id="guessesRemaining">0</span> </div>
+        </div>
+    </div>
     <script src="assets/javascript/game.js" type="text/javascript">
     </script>
 </body>
