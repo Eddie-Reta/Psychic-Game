@@ -78,7 +78,7 @@ function victory() {
     if (wins === 3) {
         console.log("win")
         var img = document.createElement("img");
-        img.src = "./assets/image/victory.gif";
+        img.src = "./assets/images/GIFS/victory.gif";
         document.getElementById("description").remove();
         document.getElementById("victorySuprise").appendChild(img);
        setTimeout(function() { window.location.reload()}, 8000);
